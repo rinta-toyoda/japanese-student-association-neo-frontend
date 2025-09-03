@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.usyd-jss.org/sitemap.xml
+
+# Additional crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Block sensitive paths (if any in future)
+# Disallow: /admin/
+# Disallow: /api/internal/

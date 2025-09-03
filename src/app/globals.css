@@ -1,26 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&family=Notable:wght@400&family=M+PLUS+1p:wght@400;700;800;900&display=swap');
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #FDF8F6;
   --foreground: #171717;
+  --jss-red: #D8342B;
+  --jss-red-dark: #B72A24;
+  --jss-skin: #FDF8F6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-jp: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  --font-notable: Notable, system-ui, sans-serif;
+  --font-mplus: "M PLUS 1p", sans-serif;
+  --color-jss-red: var(--jss-red);
+  --color-jss-red-dark: var(--jss-red-dark);
+  --color-jss-skin: var(--jss-skin);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+:lang(ja) {
+  font-family: var(--font-jp);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .text-dark-red {
+    color: var(--jss-red);
+  }
+  
+  .text-skin {
+    color: var(--jss-skin);
+  }
+  
+  .btn-primary {
+    @apply inline-block rounded-md px-6 py-3 font-bold transition-colors duration-200;
+    background-color: var(--jss-red);
+    color: var(--jss-skin);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--jss-red-dark);
+  }
+  
+  .btn-secondary {
+    @apply inline-block rounded-md border px-6 py-3 font-bold transition-colors duration-200;
+    border-color: var(--jss-red);
+    color: var(--jss-red);
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--jss-red);
+    color: var(--jss-skin);
+  }
+  
+  .section-container {
+    @apply container mx-auto px-4 py-16 md:py-24;
+  }
+  
+  .section-title {
+    @apply mb-12 text-center;
+  }
+  
+  .card {
+    @apply rounded-lg bg-white p-6 shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+  
+  .link {
+    @apply text-blue-600 underline hover:text-blue-800;
+  }
+}
+
+@layer utilities {
+  .text-shadow-white {
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.9);
+  }
+  
+  .text-shadow-glow {
+    text-shadow: 0 0 2px rgba(255,255,255,0.9);
+  }
 }

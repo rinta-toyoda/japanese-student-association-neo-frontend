@@ -1,0 +1,44 @@
+'use client'
+
+import { useAtom } from 'jotai'
+import { isJapaneseAtom } from '@/lib/atoms'
+import { executivesData } from '@/data'
+import { ExecutiveCard } from './executive-card'
+import { motion } from 'framer-motion'
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+}
+
+export function ExecutivesGrid() {
+  const [isJapanese] = useAtom(isJapaneseAtom)
+
+  return (
+    <section className="section-container">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {executivesData.map((executive) => (
+            <ExecutiveCard
+              key={isJapanese ? executive.jp.name : executive.en.name}
+              executive={executive}
+              isJapanese={isJapanese}
+            />
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  )
+}
