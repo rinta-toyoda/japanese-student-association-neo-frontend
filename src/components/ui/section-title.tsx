@@ -17,8 +17,7 @@ export function SectionTitle({ children, className = '' }: SectionTitleProps) {
       className={`section-title ${className}`}
       variants={itemVariants}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
+      animate="visible"
     >
       {children}
     </motion.div>

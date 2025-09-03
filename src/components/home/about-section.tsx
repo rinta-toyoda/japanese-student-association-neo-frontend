@@ -5,7 +5,7 @@ import { isJapaneseAtom } from '@/lib/atoms'
 import { aboutUsData } from '@/data'
 import { SectionTitle } from '@/components/ui/section-title'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { OptimizedImage } from '@/components/ui/optimized-image'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -39,8 +39,7 @@ export function AboutSection() {
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          animate="visible"
         >
           {/* Text Content */}
           <motion.div variants={itemVariants} className="space-y-6">
@@ -76,11 +75,13 @@ export function AboutSection() {
             className="flex justify-center"
           >
             <div className="relative w-full max-w-md aspect-[4/3] rounded-xl overflow-hidden shadow-2xl">
-              <Image
+              <OptimizedImage
                 src="/assets/images/home/jss_activity.jpg"
                 alt={isJapanese ? 'JSS活動の様子' : 'JSS Activity'}
                 fill
                 className="object-cover"
+                sizes="(max-width: 640px) 100vw, 448px"
+                showLoadingSpinner={true}
               />
             </div>
           </motion.div>

@@ -2,7 +2,7 @@
 
 import { EventData } from '@/types'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { OptimizedImage } from '@/components/ui/optimized-image'
 import { HiCalendar, HiLocationMarker, HiExternalLink } from 'react-icons/hi'
 
 interface EventCardProps {
@@ -53,7 +53,7 @@ export function EventCard({ event, isJapanese }: EventCardProps) {
       transition={{ duration: 0.5 }}
     >
       {/* Event Type Badge */}
-      <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold ${
+      <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold z-20 ${
         isUpcoming 
           ? 'bg-green-100 text-green-800' 
           : 'bg-gray-100 text-gray-600'
@@ -66,12 +66,14 @@ export function EventCard({ event, isJapanese }: EventCardProps) {
 
       {/* Event Image */}
       {event.image && (
-        <div className="relative w-full h-48 mb-6 -mx-6 -mt-6">
-          <Image
+        <div className="relative w-[calc(100%+3rem)] h-48 mb-6 -mx-6 -mt-6 overflow-hidden">
+          <OptimizedImage
             src={event.image}
             alt={eventData.title}
             fill
-            className="object-cover"
+            className="object-cover object-center"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            showLoadingSpinner={true}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         </div>

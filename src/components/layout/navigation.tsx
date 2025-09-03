@@ -11,20 +11,8 @@ import Link from 'next/link'
 import { HiMenu, HiX } from 'react-icons/hi'
 
 const panelVariants = {
-  hidden: { opacity: 0, y: -12, pointerEvents: 'none' as const },
-  visible: { opacity: 1, y: 0, pointerEvents: 'auto' as const },
-}
-
-const listVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.06, delayChildren: 0.02 },
-  },
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: -6 },
-  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, height: 0 },
+  visible: { opacity: 1, height: 'auto' },
 }
 
 export function Navigation() {
@@ -48,6 +36,8 @@ export function Navigation() {
                   alt="JSS Logo"
                   fill
                   className="object-contain"
+                  priority
+                  sizes="48px"
                 />
               </motion.div>
             </Link>
@@ -111,22 +101,17 @@ export function Navigation() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="lg:hidden"
+              className="lg:hidden overflow-hidden"
               variants={panelVariants}
               initial="hidden"
               animate="visible"
               exit="hidden"
-              transition={{ type: 'spring', stiffness: 500, damping: 36 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
             >
               <div className="border-t border-gray-100 bg-white py-4">
-                <motion.ul
-                  className="space-y-2"
-                  variants={listVariants}
-                  initial="hidden"
-                  animate="visible"
-                >
+                <ul className="space-y-2">
                   {navigationItems.map((item) => (
-                    <motion.li key={item.href || item.title.en} variants={itemVariants}>
+                    <li key={item.href || item.title.en}>
                       {item.href?.startsWith('http') ? (
                         <a
                           href={item.href}
@@ -146,22 +131,20 @@ export function Navigation() {
                           {isJapanese ? item.title.ja : item.title.en}
                         </Link>
                       )}
-                    </motion.li>
+                    </li>
                   ))}
-                  <motion.li variants={itemVariants} className="px-4 pt-2">
-                    <motion.a
+                  <li className="px-4 pt-2">
+                    <a
                       href="https://usu.edu.au/clubs/japanese-student-society"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-primary block text-center"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
+                      className="btn-primary block text-center hover:scale-105 transition-transform"
                       onClick={() => setIsOpen(false)}
                     >
                       {isJapanese ? '入会する' : 'Join Us!'}
-                    </motion.a>
-                  </motion.li>
-                </motion.ul>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </motion.div>
           )}

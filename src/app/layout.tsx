@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Japanese Student Society" }],
   creator: "Japanese Student Society",
   publisher: "Japanese Student Society",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -73,6 +78,8 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href="https://www.usyd-jss.org/" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preload" href="/assets/images/home/jss_main_icon.png" as="image" />
+        <link rel="preload" href="/assets/images/common/jss_icon_navigation.png" as="image" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

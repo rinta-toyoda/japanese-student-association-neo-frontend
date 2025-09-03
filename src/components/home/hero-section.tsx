@@ -3,15 +3,15 @@
 import { useAtom } from 'jotai'
 import { isJapaneseAtom } from '@/lib/atoms'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { OptimizedImage } from '@/components/ui/optimized-image'
 
 const containerVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 10 },
   visible: { opacity: 1, y: 0 },
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 8 },
   visible: { opacity: 1, y: 0 },
 }
 
@@ -117,12 +117,14 @@ export function HeroSection() {
             animate="visible"
           >
             <div className="relative w-72 h-72 md:w-96 md:h-96">
-              <Image
+              <OptimizedImage
                 src="/assets/images/home/jss_main_icon.png"
                 alt="Japanese Student Society Logo"
                 fill
-                className="object-contain drop-shadow-2xl"
+                className="object-contain drop-shadow-2xl select-none pointer-events-none"
                 priority
+                sizes="(max-width: 768px) 288px, 384px"
+                showLoadingSpinner={true}
               />
             </div>
           </motion.div>

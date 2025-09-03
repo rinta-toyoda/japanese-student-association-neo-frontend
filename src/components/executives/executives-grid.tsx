@@ -27,12 +27,11 @@ export function ExecutivesGrid() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8"
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          animate="visible"
         >
-          {executivesData.map((executive) => (
+          {executivesData.map((executive, index) => (
             <ExecutiveCard
-              key={isJapanese ? executive.jp.name : executive.en.name}
+              key={index}
               executive={executive}
               isJapanese={isJapanese}
             />
