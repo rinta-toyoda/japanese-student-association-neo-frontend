@@ -8,6 +8,7 @@ import { HiCalendar, HiLocationMarker, HiExternalLink } from 'react-icons/hi'
 interface EventCardProps {
   event: EventData
   isJapanese: boolean
+  onClick?: (event: EventData) => void
 }
 
 const cardVariants = {
@@ -19,7 +20,7 @@ const cardVariants = {
   },
 }
 
-export function EventCard({ event, isJapanese }: EventCardProps) {
+export function EventCard({ event, isJapanese, onClick }: EventCardProps) {
   const eventData = {
     title: isJapanese ? event.title.ja : event.title.en,
     description: isJapanese ? event.description.ja : event.description.en,
@@ -45,12 +46,23 @@ export function EventCard({ event, isJapanese }: EventCardProps) {
 
   return (
     <motion.div
-      className={`card relative overflow-hidden ${
+      className={`card relative overflow-hidden cursor-pointer ${
         isUpcoming ? 'ring-2 ring-jss-red ring-opacity-50' : ''
       }`}
       variants={cardVariants}
       whileHover={{ y: -8 }}
+      whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.5 }}
+      onClick={() => onClick?.(event)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          onClick?.(event)
+        }
+      }}
+      aria-label={`${isJapanese ? '詳細を見る:' : 'View details for'} ${eventData.title}`}
     >
       {/* Event Type Badge */}
       <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold z-20 ${
@@ -102,6 +114,11 @@ export function EventCard({ event, isJapanese }: EventCardProps) {
           {eventData.description}
         </p>
 
+        {/* Click to view more indicator */}
+        <div className="text-xs text-jss-red font-medium mt-4 opacity-75">
+          {isJapanese ? 'クリックして詳細を見る →' : 'Click for more details →'}
+        </div>
+
         {/* Registration Button */}
         {event.registrationUrl && isUpcoming && (
           <motion.a
@@ -111,6 +128,7 @@ export function EventCard({ event, isJapanese }: EventCardProps) {
             className="inline-flex items-center gap-2 btn-primary text-sm mt-4"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={(e) => e.stopPropagation()} // Prevent triggering the card click
           >
             <span>{isJapanese ? '参加登録' : 'Register'}</span>
             <HiExternalLink className="h-4 w-4" />
