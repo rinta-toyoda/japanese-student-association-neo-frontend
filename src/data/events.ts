@@ -1,74 +1,108 @@
-import { EventData } from '@/types'
+import { EventData, AudienceTag } from '@/types'
 
 export const eventsData: EventData[] = [
+  // {
+  //   id: 'izakaya-party-2025-s2',
+  //   title: {
+  //     ja: '居酒屋パーティー 2025',
+  //     en: 'Izakaya Party 2025'
+  //   },
+  //   description: {
+  //     ja: 'Mid Semester Break中に開催予定の居酒屋パーティーです。美味しい料理と飲み物を楽しみながら、メンバー同士の交流を深めましょう！\n',
+  //     en: 'Izakaya Party scheduled during the Mid Semester Break. Enjoy delicious food and drinks while connecting with fellow members!'
+  //   },
+  //   date: '???',
+  //   location: {
+  //     ja: 'まだ決めてないです！',
+  //     en: 'University of Sydney Union Building'
+  //   },
+  //   type: 'upcoming',
+  //   audienceTags: [
+  //     AudienceTag.USYD_STUDENTS,
+  //   ]
+  // },
   {
-    id: 'welcome-party-2025',
+    id: 'game-day-2025-s2',
     title: {
-      ja: '2025年新入生歓迎会',
-      en: '2025 Welcome Party'
+      ja: '2025年ゲーム会',
+      en: 'Game Day 2025'
     },
     description: {
-      ja: '新入生の皆さんを歓迎する年次イベントです。日本人学生同士の交流を深め、大学生活について情報交換を行います。美味しい料理と楽しいアクティビティを用意してお待ちしています！',
-      en: 'Our annual event to welcome new students! Connect with fellow Japanese students, share university life experiences, and enjoy delicious food and fun activities together!'
+      ja: 'みんなで一緒にボードゲームやカードゲームを楽しむイベントです。新しい友達を作りながら、楽しい時間を過ごしましょう！\n',
+      en: 'Let\'s enjoy board games and card games together. Make new friends and have a great time!'
     },
-    date: '2025-03-15',
+    date: '2025-09-26',
     location: {
-      ja: 'シドニー大学 ユニオンビル',
-      en: 'University of Sydney Union Building'
+      ja: 'シドニー大学 Education Building. Education Seminar Room 323',
+      en: 'University of Sydney Education Building. Education Seminar Room 323'
     },
     type: 'upcoming',
-    registrationUrl: 'https://usu.edu.au/clubs/japanese-student-society'
+    registrationUrl: 'https://usu.edu.au/clubs/japanese-student-society',
+    audienceTags: [
+      AudienceTag.USYD_STUDENTS,
+    ]
   },
   {
-    id: 'cultural-festival-2024',
+    id: 'basketball-day-2025-s2',
     title: {
-      ja: '日本文化フェスティバル2024',
-      en: 'Japanese Cultural Festival 2024'
+      ja: 'バスケットボール大会 2025',
+      en: 'バスケットボール大会 2025'
     },
     description: {
-      ja: '日本文化を紹介し、多様なコミュニティとの交流を深めるイベントでした。書道、折り紙、日本料理の体験コーナーを設置し、多くの学生に参加いただきました。',
-      en: 'An event showcasing Japanese culture and fostering connections with diverse communities. We featured calligraphy, origami, and Japanese cuisine experiences, with great participation from students.'
+      ja: '複数のグループに分かれ、クイズや謎解きに協力してチャレンジするイベントでした。各グループがにぎやかに謎解きを進め、最後は獲得した得点順にピザやサイドフードを選び、楽しみました！\n',
+      en: 'It was an event where we split into groups and collaborated on quizzes and riddles. With each group buzzing with excitement, we wrapped up by choosing pizza and side dishes according to the points we had scored.'
     },
-    date: '2024-10-20',
+    date: '2025-08-29',
     location: {
-      ja: 'シドニー大学 クアドラングル',
-      en: 'University of Sydney Quadrangle'
+      ja: 'シドニー大学 Education building Seminar room 625-626',
+      en: 'University of Sydney Education building Seminar room 625-626'
     },
     type: 'past',
-    image: '/assets/images/home/jss_activity.jpg'
+    image: '/assets/images/events/basketball-day-2025-s2.jpg',
+    audienceTags: [
+      AudienceTag.USYD_STUDENTS
+    ]
   },
   {
-    id: 'study-session-march',
+    id: 'riddle-solving-night-2025-s2',
     title: {
-      ja: '試験対策勉強会',
-      en: 'Exam Preparation Study Session'
+      ja: '謎解きナイト',
+      en: 'Riddle-Solving Night'
     },
     description: {
-      ja: '期末試験に向けた勉強会を開催します。先輩学生からのアドバイスや効果的な学習方法の共有、グループ学習の機会を提供します。',
-      en: 'Join us for a collaborative study session preparing for final exams. Get advice from senior students, share effective study methods, and benefit from group learning.'
+      ja: '複数のグループに分かれ、クイズや謎解きに協力してチャレンジするイベントでした。各グループがにぎやかに謎解きを進め、最後は獲得した得点順にピザやサイドフードを選び、楽しみました！\n',
+      en: 'It was an event where we split into groups and collaborated on quizzes and riddles. With each group buzzing with excitement, we wrapped up by choosing pizza and side dishes according to the points we had scored.'
     },
-    date: '2025-03-25',
+    date: '2025-08-29',
     location: {
-      ja: 'フィッシャー図書館',
-      en: 'Fisher Library'
+      ja: 'シドニー大学 Education building Seminar room 625-626',
+      en: 'University of Sydney Education building Seminar room 625-626'
     },
-    type: 'upcoming'
+    type: 'past',
+    image: '/assets/images/events/riddle-solving-night-2025-s2.jpg',
+    audienceTags: [
+      AudienceTag.USYD_STUDENTS
+    ]
   },
   {
-    id: 'networking-dinner-2024',
+    id: 'speed-friending-2025-s2',
     title: {
-      ja: 'ネットワーキングディナー',
-      en: 'Networking Dinner 2024'
+      ja: 'スピードフレンディング 2025',
+      en: 'Speed Friending 2025'
     },
     description: {
-      ja: '日本人学生、教授、地域の日本人コミュニティが一堂に会するネットワーキングディナーを開催しました。将来のキャリアについて話し合い、貴重なつながりを築きました。',
-      en: 'A networking dinner bringing together Japanese students, professors, and the local Japanese community. We discussed future careers and built valuable connections.'
+      ja: 'JSSのキックオフとして、メンバー同士が交流を深めるイベントでした。メンバーの一面を知れるビンゴシートを活用しながら和やかな雰囲気で多くのメンバーと親睦を深めました！\n',
+      en: 'The JSS kickoff featured a social event for members to get to know each other. Using a bingo sheet to discover fun aspects of one another, we enjoyed a warm and friendly atmosphere and built connections with many members.\n'
     },
-    date: '2024-08-15',
+    date: '2025-08-14',
     location: {
-      ja: 'シティ内日本料理レストラン',
-      en: 'Japanese Restaurant in Sydney CBD'
+      ja: 'シドニー大学 Home Building Common Room',
+      en: 'University of Sydney Home Building Common Room'
     },
-    type: 'past'
-  }
+    type: 'past',
+    image: '/assets/images/events/speed-friending-2025-s2.jpg',
+    audienceTags: [
+      AudienceTag.USYD_STUDENTS,
+    ]
+  },
 ]

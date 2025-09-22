@@ -1,6 +1,6 @@
 'use client'
 
-import { EventData } from '@/types'
+import { EventData, AUDIENCE_TAG_LABELS } from '@/types'
 import { motion, AnimatePresence } from 'framer-motion'
 import { OptimizedImage } from '@/components/ui/optimized-image'
 import { HiCalendar, HiLocationMarker, HiExternalLink, HiX } from 'react-icons/hi'
@@ -188,12 +188,37 @@ export function EventModal({ event, isOpen, onClose, isJapanese }: EventModalPro
                 <div className="flex items-start gap-3">
                   <HiLocationMarker className="h-5 w-5 text-jss-red flex-shrink-0 mt-1" />
                   <div>
-                    <p className="font-medium text-gray-900">
+                    <button
+                      onClick={() => {
+                        const query = encodeURIComponent(eventData.location)
+                        window.open(`https://www.google.com/maps/search/${query}`, '_blank')
+                      }}
+                      className="font-medium text-gray-900 hover:text-jss-red transition-colors cursor-pointer underline decoration-dotted underline-offset-2"
+                    >
                       {eventData.location}
-                    </p>
+                    </button>
                   </div>
                 </div>
               </div>
+
+              {/* Audience Tags */}
+              {event.audienceTags && event.audienceTags.length > 0 && (
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {isJapanese ? '対象者' : 'Who can attend'}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {event.audienceTags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 border border-blue-200"
+                      >
+                        {isJapanese ? AUDIENCE_TAG_LABELS[tag].ja : AUDIENCE_TAG_LABELS[tag].en}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Description */}
               <div className="space-y-3">

@@ -21,15 +21,15 @@ export const executivesData: ExecutiveData[] = [
       name: '豊田凜太',
       position: '副会長',
       description:
-        '初代副会長。日本人会の設立に貢献。日本人学生会の活動を支えるため、会の運営やイベントの企画に積極的に関わっている。また、IT系の管理も担当しており、この日本人会公式ウェブサイトの実装もしている。かりんとう喉に詰まらせて窒息し、病院に搬送されたことがあるらしい。',
+        '初代副会長。日本人会の設立に貢献。日本人学生会の活動を支えるため、会の運営やイベントの企画に積極的に関わっている。また、IT系の管理も担当しており、この日本人会公式ウェブサイトの実装もしている。チェンソーマンが好き。3歳の時にかりんとう喉に詰まらせて窒息し、病院に搬送されたことがあるらしい。',
     },
     en: {
       name: 'Rinta Toyoda',
       position: 'Vice-President',
       description:
-        'The first Vice-President and a key contributor to the founding of JSS. Rinta actively supports the society activities by managing operations and organizing events. He also takes care of IT management, including building this official website. Fun fact: he once choked on karintō and was rushed to the hospital.',
+        'The first Vice-President and a key contributor to the founding of JSS. Rinta actively supports the society activities by managing operations and organizing events. He also takes care of IT management, including building this official website. Loves Chainsaw Man. Fun fact: he choked on karintō when he was 3 years old and was rushed to the hospital.',
     },
-    image: '/assets/images/executives/rinta_toyoda.png',
+    image: '/assets/images/executives/rinta_toyoda.jpg',
   },
   {
     jp: {
@@ -60,5 +60,20 @@ export const executivesData: ExecutiveData[] = [
         'Responsible for planning and supporting JSS events, Shotaro plays a key role in making our gatherings run smoothly. Fun fact: he was actually born in Saudi Arabia.',
     },
     image: '/assets/images/executives/shotaro_yano.png',
+  },
+  {
+    jp: {
+      name: '天野水優子',
+      position: '広報',
+      description:
+        '日本人学生会の広報担当として、コミュニティとの連携を深める活動に従事している。明るい性格で新入生のサポートも積極的に行っている。',
+    },
+    en: {
+      name: 'Miyuko Amano',
+      position: 'Public Relations',
+      description:
+        'Misaki handles public relations and strengthens community connections for JSS. With her cheerful personality, she actively supports new students.',
+    },
+    image: '/', // Using placeholder image for now
   },
 ]

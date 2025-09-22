@@ -1,6 +1,6 @@
 'use client'
 
-import { EventData } from '@/types'
+import { EventData, AUDIENCE_TAG_LABELS } from '@/types'
 import { motion } from 'framer-motion'
 import { OptimizedImage } from '@/components/ui/optimized-image'
 import { HiCalendar, HiLocationMarker, HiExternalLink } from 'react-icons/hi'
@@ -105,7 +105,16 @@ export function EventCard({ event, isJapanese, onClick }: EventCardProps) {
           </div>
           <div className="flex items-start gap-2">
             <HiLocationMarker className="h-4 w-4 text-jss-red flex-shrink-0 mt-0.5" />
-            <span>{eventData.location}</span>
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                const query = encodeURIComponent(eventData.location)
+                window.open(`https://www.google.com/maps/search/${query}`, '_blank')
+              }}
+              className="text-left hover:text-jss-red transition-colors cursor-pointer underline decoration-dotted underline-offset-2"
+            >
+              {eventData.location}
+            </button>
           </div>
         </div>
 
@@ -113,6 +122,20 @@ export function EventCard({ event, isJapanese, onClick }: EventCardProps) {
         <p className="text-gray-600 text-sm leading-relaxed line-clamp-4">
           {eventData.description}
         </p>
+
+        {/* Audience Tags */}
+        {event.audienceTags && event.audienceTags.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {event.audienceTags.map((tag, index) => (
+              <span
+                key={index}
+                className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200"
+              >
+                {isJapanese ? AUDIENCE_TAG_LABELS[tag].ja : AUDIENCE_TAG_LABELS[tag].en}
+              </span>
+            ))}
+          </div>
+        )}
 
         {/* Click to view more indicator */}
         <div className="text-xs text-jss-red font-medium mt-4 opacity-75">
