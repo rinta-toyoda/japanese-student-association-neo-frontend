@@ -49,7 +49,7 @@ export function ExecutiveCard({ executive, isJapanese }: ExecutiveCardProps) {
         </div>
 
         {/* Description */}
-        <p className="text-gray-600 text-sm leading-relaxed">
+        <p className="text-gray-600 text-sm leading-relaxed text-left">
           {data.description}
         </p>
       </div>
