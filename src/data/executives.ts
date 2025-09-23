@@ -21,13 +21,13 @@ export const executivesData: ExecutiveData[] = [
       name: '豊田凜太',
       position: '副会長',
       description:
-        '初代副会長。日本人会の設立に貢献。日本人学生会の活動を支えるため、会の運営やイベントの企画に積極的に関わっている。また、IT系の管理も担当しており、この日本人会公式ウェブサイトの実装もしている。チェンソーマンが好き。3歳の時にかりんとう喉に詰まらせて窒息し、病院に搬送されたことがあるらしい。',
+        '初代副会長。日本人会の設立に貢献。日本人学生会の活動を支えるため、会の運営やイベントの企画に積極的に関わっている。また、IT系の管理も担当しており、この日本人会公式ウェブサイトの実装もしている。3歳の時にかりんとう喉に詰まらせて窒息し、病院に搬送されたことがあるらしい。',
     },
     en: {
       name: 'Rinta Toyoda',
       position: 'Vice-President',
       description:
-        'The first Vice-President and a key contributor to the founding of JSS. Rinta actively supports the society activities by managing operations and organizing events. He also takes care of IT management, including building this official website. Loves Chainsaw Man. Fun fact: he choked on karintō when he was 3 years old and was rushed to the hospital.',
+        'The first Vice-President and a key contributor to the founding of JSS. Rinta actively supports the society activities by managing operations and organizing events. He also takes care of IT management, including building this official website. Fun fact: he choked on karintō when he was 3 years old and was rushed to the hospital.',
     },
     image: '/assets/images/executives/rinta_toyoda.jpg',
   },
