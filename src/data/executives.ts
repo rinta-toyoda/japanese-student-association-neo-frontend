@@ -64,15 +64,15 @@ export const executivesData: ExecutiveData[] = [
   {
     jp: {
       name: '天野水優子',
-      position: '広報',
+      position: '秘書',
       description:
-        '日本人学生会の広報担当として、コミュニティとの連携を深める活動に従事している。明るい性格で新入生のサポートも積極的に行っている。',
+        '日本人学生会の秘書を務める。コミュニティとの連携を強化し、明るい性格で新入生のサポートも積極的に行っている。',
     },
     en: {
       name: 'Miyuko Amano',
-      position: 'Public Relations',
+      position: 'Secretary',
       description:
-        'Misaki handles public relations and strengthens community connections for JSS. With her cheerful personality, she actively supports new students.',
+        'Misaki handles secretarial duties for JSS. She strengthens community connections and, with her cheerful personality, actively supports new members.',
     },
     image: '/', // Using placeholder image for now
   },
