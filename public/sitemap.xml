@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url><loc>https://www.usyd-jss.org/</loc></url>
-    <url><loc>https://www.usyd-jss.org/executives</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.usyd-jss.org/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.usyd-jss.org/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.usyd-jss.org/?lang=ja" />
+  </url>
+  <url>
+    <loc>https://www.usyd-jss.org/events</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.usyd-jss.org/events" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.usyd-jss.org/events?lang=ja" />
+  </url>
+  <url>
+    <loc>https://www.usyd-jss.org/executives</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.usyd-jss.org/executives" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.usyd-jss.org/executives?lang=ja" />
+  </url>
 </urlset>
