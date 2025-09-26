@@ -36,7 +36,7 @@ export const eventsData: EventData[] = [
       ja: 'シドニー大学 Education Building. Education Seminar Room 323',
       en: 'University of Sydney Education Building. Education Seminar Room 323'
     },
-    type: 'upcoming',
+    type: 'past',
     registrationUrl: 'https://usu.edu.au/clubs/japanese-student-society',
     audienceTags: [
       AudienceTag.USYD_STUDENTS,
