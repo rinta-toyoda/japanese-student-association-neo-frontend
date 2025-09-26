@@ -72,7 +72,7 @@ export const executivesData: ExecutiveData[] = [
       name: 'Miyuko Amano',
       position: 'Secretary',
       description:
-        'Misaki handles secretarial duties for JSS. She strengthens community connections and, with her cheerful personality, actively supports new members.',
+        'Miyuko handles secretarial duties for JSS. She strengthens community connections and, with her cheerful personality, actively supports new members.',
     },
     image: '/', // Using placeholder image for now
   },
